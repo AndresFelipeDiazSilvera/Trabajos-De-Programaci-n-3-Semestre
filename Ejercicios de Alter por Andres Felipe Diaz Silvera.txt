@@ -1,0 +1,9 @@
+- ALTER TABLE platos ADD platos int;
+- ALTER TABLE platos DROP COLUMN platos;
+- ALTER TABLE platos CHANGE precio costo int;
+- ALTER TABLE ingredientes MODIFY precio DATE NOT NULL;
+- ALTER TABLE ingredientes ADD INDEX descripcion
+- ALTER TABLE platos DROP PRIMARY KEY;
+- ALTER TABLE platos ADD PRIMARY KEY (idmenu);
+- ALTER TABLE vinos DROP FOREIGN KEY ( vinos_idvino );
+- ALTER TABLE vinos ADD FOREIGN KEY ( vinos_idvino );
