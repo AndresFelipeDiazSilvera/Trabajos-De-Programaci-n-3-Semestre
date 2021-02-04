@@ -1,0 +1,25 @@
+1. σ dni = '123456789' (empleado) 
+2. π nombreEmpleado,fechaNacimiento (empleado)
+3. empleado ⨯ departamento
+4. empleado ⨝ departamento
+5. π nombreEmpleado, apellido, nombreDepartamento (empleado ⨝ departamento)
+6. π empleado.nombreEmpleado, empleado.apellido, departamento.nombreDepartamento (σ departamento.jefe_dni=empleado.dni (empleado ⨯ departamento))
+7. π departmento.nombreDepartamento,ubicaciones_departamento.ubicacion (departmento⨝ubicaciones_departamento)
+8. π departmento.nombreDepartamento, departmento.fechaInicio (departmento)
+9. π departmento.nombreDepartamento, proyecto.ubicacion (departmento ⨝ proyecto)
+10. π empleado.nombreEmpleado , empleado.apellido, proyecto.nombreProyecto, horas (empleado ⨝ horas ⨝ proyecto)
+11. π empleado.nombreEmpleado, jefe.nombreEmpleado
+    σ empleado.jefe_dni = jefe.dni
+    ( ρ empleado empleado ⨯ ρ jefe empleado)
+
+12. π nombreEmpleado,apellido,salario (σ salario <= 30000 (empleado))
+13. σ ubicacion = 'Bogota' ((empleado ⨝ departmento) ⨝ ubicaciones_departamento)
+14. σ vinculo = 'esposa' (dependientes)
+15. π nombreEmpleado,apellido, empleado.dni, nombreDependiente, vinculo (σ empleado.dni=dependientes.dni (empleado ⨯ dependientes)) 
+16. π nombreEmpleado, apellido, empleado.dni, nombreDependiente, vinculo (σ vinculo = 'hija' and empleado.dni = dependientes.dni (empleado ⨯ dependientes)) 
+    ∪ 
+    π nombreEmpleado, apellido, empleado.dni, nombreDependiente, vinculo (σ vinculo = 'hijo' and empleado.dni = dependientes.dni (empleado ⨯ dependientes))
+17. σ dni = '888665555' (empleado)  
+18. π nombreEmpleado,apellido,salario (σ salario = 25000 (empleado))
+19. σ ubicacion = 'Cali' and genero = 'M' (empleado ⨝ departmento ⨝ ubicaciones_departamento) 
+20. σ vinculo = 'hijos' (empleados)
